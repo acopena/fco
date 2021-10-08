@@ -14,7 +14,11 @@ import { BadmintonComponent } from './sites/badminton/badminton.component';
 import { PingpongComponent } from './sites/pingpong/pingpong.component';
 import { PppComponent } from './sites/ppp/ppp.component';
 import { CouplebikerComponent } from './sites/couplebiker/couplebiker.component';
+import { GolfComponent } from './sites/golf/golf.component';
 
+// Admin
+import { UserlistComponent } from './admin/userlist/userlist.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
@@ -31,6 +35,11 @@ const routes: Routes = [
   { path: 'pingpong', component: PingpongComponent },
   { path: 'ppp', component: PppComponent },
   { path: 'couplebiker', component: CouplebikerComponent },
+  { path: 'golf', component: GolfComponent },
+
+  // admin
+  { path: 'userlist', component: UserlistComponent },
+  { path: 'dashboard', component: DashboardComponent },
 
   { path: '**', redirectTo: 'home' }
 ];
