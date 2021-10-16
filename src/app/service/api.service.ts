@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import {
   HttpClient,
   HttpHeaders,
@@ -14,7 +14,7 @@ export class ApiService {
   data: any;
   // readonly apiRoot = "http://webapi.acopena.net/api/pbao/";
 
-  readonly apiRoot = 'http://localhost:7027/api/fco/';
+  readonly apiRoot = 'http://localhost:7300/api/fco/';
 
   loading: boolean;
 
@@ -31,7 +31,7 @@ export class ApiService {
     return this.http.get<any>(this.apiRoot + url);
   }
 
-  private handleError(err: HttpErrorResponse) {
+  private handleError(err: HttpErrorResponse): any {
     return throwError(err.message);
   }
 
@@ -53,9 +53,9 @@ export class ApiService {
       },
       (err: HttpErrorResponse) => {
         if (err.error instanceof Error) {
-          console.log("Client-side error occurred");
+          console.log('Client-side error occurred');
         } else {
-          console.log("Server-side Error occurred");
+          console.log('Server-side Error occurred');
         }
       }
     );

@@ -14,21 +14,29 @@
           <ul class="navbar-nav" id="mainmenu">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" [routerLink]="['/sports']"
-                (click)="OnSelectedMenu('Sports', this)">Sports</a>
+                (click)="OnSelectedMenu(1,'sports', this)">Sports</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" [routerLink]="['/recreation']"
-                (click)="OnSelectedMenu('Recreation', this)">Recreation</a>
+                (click)="OnSelectedMenu(3,'recreation', this)">Recreation</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" [routerLink]="['/integration']"
-                (click)="OnSelectedMenu('Integration', this)">Integration</a>
+                (click)="OnSelectedMenu(2,'integration', this)">Integration</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/events']" (click)="OnSelectedMenu('Events',this)">Events</a>
+              <a class="nav-link" [routerLink]="['/business']"
+                (click)="OnSelectedMenu(4,'business', this)">Business</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/about']" (click)="OnSelectedMenu('Contact', this)">Contact Us</a>
+              <a class="nav-link" [routerLink]="['/religion']"
+                (click)="OnSelectedMenu(6,'religion', this)">Religion</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/events']" (click)="OnSelectedMenu(5,'events',this)">Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" [routerLink]="['/about']">Contact Us</a>
             </li>
 
           </ul>
@@ -40,20 +48,9 @@
 </header>
 
   <div class="content" role="main" style="padding-left:10%;padding-right:10%">
-    <span *ngIf="events=='Sports'">
       <header>
-        <app-sportsmenu></app-sportsmenu>
+        <app-menu2 [menu] = 'menuList' [homepage]='homepage'></app-menu2>
       </header>
-    </span>
-    <span *ngIf="events=='Recreation'">
-      <app-recreationmenu></app-recreationmenu>
-    </span>
-    <span *ngIf="events=='Integration'">
-      <app-integrationmenu></app-integrationmenu>
-    </span>
-    <span *ngIf="events=='Events'">
-      <app-eventsmenu></app-eventsmenu>
-    </span>
 
     <router-outlet></router-outlet>
   </div>

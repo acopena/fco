@@ -4,6 +4,9 @@ import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/c
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { MaterialModule } from './shared/material.module';
+import { NgxEditorModule } from 'ngx-editor';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SitesModule } from './sites/sites.module';
@@ -22,14 +25,17 @@ import { StorageService } from './service/storage.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MaterialModule,
     BrowserAnimationsModule,
     CommonModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     SitesModule,
-    AdminModule
+    AdminModule,
+    NgxEditorModule
   ],
+  exports: [ MaterialModule],
   providers: [ApiService, UserSessionService, StorageService,  { provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
