@@ -16,7 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserSessionService } from './service/user-session.service';
 import { ApiService } from './service/api.service';
 import { StorageService } from './service/storage.service';
-
+import { FullCalendarModule } from '@fullcalendar/angular';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,6 @@ import { StorageService } from './service/storage.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterialModule,
     BrowserAnimationsModule,
     CommonModule,
     HttpClientModule,
@@ -33,9 +32,10 @@ import { StorageService } from './service/storage.service';
     ReactiveFormsModule,
     SitesModule,
     AdminModule,
-    NgxEditorModule
+    NgxEditorModule,
+    FullCalendarModule,
+    MaterialModule
   ],
-  exports: [ MaterialModule],
   providers: [ApiService, UserSessionService, StorageService,  { provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })

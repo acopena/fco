@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule, ɵROUTER_PROVIDERS } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { MaterialModule } from '../shared/material.module';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 
@@ -29,6 +29,9 @@ import { ReligionhomeComponent } from './religion/religionhome/religionhome.comp
 import { FccComponent } from './religion/fcc/fcc.component';
 import { BayshorebasketballComponent } from './sports/bayshorebasketball/bayshorebasketball.component';
 import { OttawatitansComponent } from './sports/ottawatitans/ottawatitans.component';
+import { LoginComponent } from './login/login.component';
+import { InfoComponent } from './info/info.component';
+import { ContactusComponent } from './contactus/contactus.component';
 
 @NgModule({
   declarations: [
@@ -56,12 +59,16 @@ import { OttawatitansComponent } from './sports/ottawatitans/ottawatitans.compon
     ReligionhomeComponent,
     FccComponent,
     BayshorebasketballComponent,
-    OttawatitansComponent
+    OttawatitansComponent,
+    LoginComponent,
+    InfoComponent,
+    ContactusComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
     FormsModule,
+    MaterialModule
   ],
   exports: [ SitesmenuComponent,  Menu2Component, BasketballComponent, BadmintonComponent]
 })

@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  isLogIn = true;
+  isLogIn = false;
   title = 'fco';
   events = 'sports';
   errorMessage = '';

@@ -67,7 +67,7 @@ export class ApiService {
     let userInfo: any;
     userInfo  = localStorage.getItem('currentUser');
     if (userInfo == null) {
-      alert('local storage current user does not exist');
+      console.log('local storage current user does not exist');
     }
     return  userInfo = JSON.parse(userInfo);
   }

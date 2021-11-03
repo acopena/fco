@@ -1,13 +1,85 @@
-<p>content works!</p>
-<h1>Text Editor</h1>
+<div class="card">
+  <div class="card-header card-default">
+    <b>Web Content</b>
+  </div>
+  <div class="card-block" style="padding:10px">
+    <div>
+      <form (ngSubmit)="onSubmit()" #webForm="ngForm">
+        <div class="row">
+          <div class="col-md-4">
+            <mat-form-field style="width:200px">
+              <mat-select placeholder="Group Name" [(ngModel)]="web.groupId" name="GroupId"
+                #contentTypeId="ngModel" required>
+                <mat-option *ngFor="let c of grpList" [value]=c.groupId>{{c.groupName}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <br />
+          </div>
+          <div class="col-md-4">
+            <mat-form-field style="width:200px">
+              <mat-select placeholder="Content Type" [(ngModel)]="web.contentTypeId" name="contentTypeId"
+                #contentTypeId="ngModel" required>
+                <mat-option *ngFor="let c of webContentTypeList" [value]=c.contentTypeId>{{c.description}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <br />
+          </div>
 
-<div class="NgxEditor__Wrapper">
-  <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
-  <ngx-editor
-    [editor]="editor"
-    [ngModel]="html"
-    [disabled]="false"
-    [placeholder]="'Type here...'"
-  ></ngx-editor>
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <mat-form-field>
+                <input matInput [matDatepicker]="dp3" placeholder="Published Start Date" disabled [(ngModel)]="web.publishedStartDate" name="pstartDate" #pstartDate="ngModel">
+                <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+                <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+              </mat-form-field>
+
+
+
+          </div>
+          <div class="col-md-4">
+            <mat-form-field>
+              <input matInput [matDatepicker]="dp4" placeholder="Published End Date" disabled [(ngModel)]="web.publishedEndDate" name="pendDate" #pendDate="ngModel">
+              <mat-datepicker-toggle matSuffix [for]="dp4"></mat-datepicker-toggle>
+              <mat-datepicker #dp4 disabled="false"></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12">
+            <mat-form-field style="width:450px">
+              <input matInput placeholder="Title" [(ngModel)]="web.contentTitle" name="title" #title="ngModel" required>
+            </mat-form-field>
+            <br />
+          </div>
+
+        </div>
+        <hr />
+
+        <div class="row">
+          <div class="col-md-12">
+            <span>Content</span>
+            <ckeditor [(ngModel)]="web.contentDetails" name="webContent" #webContent="ngModel" required
+              style="width: 100%">
+            </ckeditor>
+          </div>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary" [disabled]="!isValid">
+          <i class="fa fa-floppy-o" aria-hidden="true"></i>&nbsp;Save </button>
+&nbsp;&nbsp;&nbsp;
+          <button type="submit" class="btn btn-primary" [routerLink]="['/contentlist']">
+              <i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Back to list</button>
+      </form>
+    </div>
+  </div>
 </div>
+
+
+
+
 

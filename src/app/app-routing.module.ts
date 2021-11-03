@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './sites/about/about.component';
 import { HomeComponent } from './sites/home/home.component';
+import { ContactusComponent } from './sites/contactus/contactus.component';
 
 import { RecreationhomeComponent } from './sites/recreation/recreationhome/recreationhome.component';
 import { IntegrationComponent } from './sites/integration/integration.component';
@@ -24,6 +25,9 @@ import { GolfComponent } from './sites/recreation/golf/golf.component';
 import { ReligionhomeComponent } from './sites/religion/religionhome/religionhome.component';
 import { BusinesshomeComponent } from './sites/business/businesshome/businesshome.component';
 
+import { LoginComponent } from './sites/login/login.component';
+import { InfoComponent } from './sites/info/info.component';
+
 // Admin
 import { UserlistComponent } from './admin/userlist/userlist.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
@@ -39,6 +43,8 @@ const routes: Routes = [
   { path: 'integration', component: IntegrationComponent },
   { path: 'events', component: EventshomeComponent },
   { path: 'aboutus', component: AboutComponent },
+  { path: 'contactus', component: ContactusComponent },
+  { path: 'info/:id', component: InfoComponent },
 
   { path: 'sports', component: SportshomeComponent },
   { path: 'basketball', component: BasketballComponent },
@@ -55,6 +61,8 @@ const routes: Routes = [
 
   { path: 'religion', component: ReligionhomeComponent },
   { path: 'business', component: BusinesshomeComponent },
+  { path: 'login', component: LoginComponent },
+
   // admin
   { path: 'userlist', component: UserlistComponent },
   { path: 'dashboard', component: DashboardComponent },

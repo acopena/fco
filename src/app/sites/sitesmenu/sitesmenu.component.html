@@ -10,47 +10,55 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav" id="mainmenu">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" [routerLink]="['/sports']"
-                (click)="OnSelectedMenu(1,'sports', this)">Sports</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/recreation']"
-                (click)="OnSelectedMenu(3,'recreation', this)">Recreation</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/integration']"
-                (click)="OnSelectedMenu(2,'integration', this)">Integration</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/business']"
-                (click)="OnSelectedMenu(4,'business', this)">Business</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/religion']"
-                (click)="OnSelectedMenu(6,'religion', this)">Religion</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/events']" (click)="OnSelectedMenu(5,'events',this)">Events</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" [routerLink]="['/about']">Contact Us</a>
-            </li>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav" id="mainmenu">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" [routerLink]="['/sports']"
+              (mouseover)="OnSelectedMenu(1,'Sports', this)">Sports</a>
 
-          </ul>
-        </div>
+
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/recreation']"
+              (mouseover)="OnSelectedMenu(3,'Recreation', this)">Recreation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/integration']"
+              (mouseover)="OnSelectedMenu(2,'Integration', this)">Integration</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/business']"
+            (mouseover)="OnSelectedMenu(4,'Business', this)">Business</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/religion']"
+            (mouseover)="OnSelectedMenu(6,'Religion', this)">Religion</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/events']"
+            (mouseover)="OnSelectedMenu(5,'Events',this)">Events</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/contactus']"
+            (mouseover)="OnSelectedMenu(0,'Contactus',this)">Contact Us</a>
+          </li>
+
+
+        </ul>
+
       </div>
+
+      <span class="push-right" style="color: white;"><a style="color: white;" [routerLink]="['/login']">Log
+          In</a></span>
+    </div>
 
   </nav>
 
 </header>
+<div *ngIf="groupTypeId > 0">
+  <app-menu2 [menu]='menuList' [homepage]='homepage'></app-menu2>
+</div>
 
-  <div class="content" role="main" style="padding-left:10%;padding-right:10%">
-      <header>
-        <app-menu2 [menu] = 'menuList' [homepage]='homepage'></app-menu2>
-      </header>
-
-    <router-outlet></router-outlet>
-  </div>
+<div class="content" role="main" style="padding-left:10%;padding-right:10%; min-height: 30%; padding-top: 10px;">
+  <router-outlet></router-outlet>
+</div>

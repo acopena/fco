@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { NgxEditorModule } from 'ngx-editor';
-
+import { CommonModule } from '@angular/common'
+import { CKEditorModule } from 'ckeditor4-angular';
 import { Routes, RouterModule, ɵROUTER_PROVIDERS } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table' ;
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { MaterialModule } from '../shared/material.module';
 
 import { UserlistComponent } from './userlist/userlist.component';
 import { AdminmenuComponent } from './adminmenu/adminmenu.component';
@@ -26,8 +27,10 @@ import { ContentlistComponent } from './contentlist/contentlist.component';
     CommonModule,
     RouterModule,
     FormsModule,
-    NgxEditorModule,
-    MatTableModule
+    MatTableModule,
+    MaterialModule,
+    FullCalendarModule,
+    CKEditorModule
   ],
   exports: [ AdminmenuComponent]
 

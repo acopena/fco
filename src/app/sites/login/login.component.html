@@ -1,0 +1,29 @@
+<div class="row justify-content-md-center">
+  <div class="col-12 col-md-auto" style="min-width:50%">
+
+    <div class="card" style="width:80%;text-align:center; margin-top:5%">
+      <div class="card-header card-default">
+        <b>Sign in</b>
+      </div>
+      <div class="card-block" style="padding:2rem">
+          <form #mForm="ngForm">
+              <mat-form-field>
+                <input matInput placeholder="Email address" [(ngModel)]="userName" name="userName1" #userName1="ngModel" required>
+              </mat-form-field>
+              <br />
+              <mat-form-field>
+                  <input matInput type="password" placeholder="Password" [(ngModel)]="passWord" name="passWord1" #passWord1="ngModel" required>
+                </mat-form-field>
+            </form>
+            <br />
+          <button mat-raised-button color="primary" [disabled]="!mForm.valid"
+          (click)="onSubmit()">Submit</button>
+
+        <hr/>
+        <a [routerLink]="['/register']" class="btn btn-primary">
+          <i class="fa fa-plus-circle" aria-hidden="true"></i> Register
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

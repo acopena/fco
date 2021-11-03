@@ -12,4 +12,8 @@ export class AdminmenuComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  logOut(): void {
+    localStorage.removeItem('currentUser');
+    window.location.href = './';
+  }
 }
